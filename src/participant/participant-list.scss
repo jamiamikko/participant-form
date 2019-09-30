@@ -14,6 +14,17 @@
     background-color: $white;
     padding: 1rem;
   }
+
+  &__content {
+    margin-top: 0.75rem;
+    background-color: $white;
+    padding: 1.5rem;
+  }
+}
+
+.participant {
+  display: flex;
+  justify-content: space-between;
 }
 
 .participant-form {
