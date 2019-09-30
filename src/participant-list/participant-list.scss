@@ -1,4 +1,5 @@
 @import '../scss/helpers/variables.scss';
+@import '../scss/helpers/mixins.scss';
 
 .participant-list {
   max-width: 57rem;
@@ -16,8 +17,10 @@
 }
 
 .participant-form {
-  display: flex;
-  justify-content: space-between;
+  @include media-min($tablet-bp) {
+    display: flex;
+    justify-content: space-between;
+  }
 
   &__input {
     font-size: 1rem;
