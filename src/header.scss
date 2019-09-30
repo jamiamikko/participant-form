@@ -3,7 +3,7 @@
 .header {
   display: flex;
   height: 6rem;
-  background-color: $gray-dark;
+  background-color: $gray-darker;
 
   &__wrapper {
     display: flex;
@@ -14,7 +14,7 @@
   }
 
   &__logo {
-    background-color: white;
+    background-color: $white;
     height: 2rem;
     width: 2rem;
   }

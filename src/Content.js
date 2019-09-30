@@ -1,11 +1,11 @@
-import React, {Component} from 'react';
-import ParticipantList from './ParticipantList';
+import React, { Component } from 'react';
+import ParticipantList from './participant-list/ParticipantList';
 import './content.scss';
 
 class Content extends Component {
   render() {
     return (
-      <section class="content">
+      <section className="content">
         <ParticipantList />
       </section>
     );

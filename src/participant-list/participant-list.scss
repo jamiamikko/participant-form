@@ -1,0 +1,38 @@
+@import '../scss/helpers/variables.scss';
+@import '../scss/helpers/mixins.scss';
+
+.participant-list {
+  max-width: 57rem;
+  margin: 0 auto;
+
+  &__heading {
+    margin: 0;
+  }
+
+  &__header {
+    margin-top: 4.5rem;
+    background-color: $white;
+    padding: 1rem;
+  }
+}
+
+.participant-form {
+  @include media-min($tablet-bp) {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__input {
+    font-size: 1rem;
+    background-color: $gray-light;
+    padding: 0 0.75rem;
+    height: 2.5rem;
+    border: 1px solid $gray-darker;
+  }
+
+  &__button {
+    font-size: 1rem;
+    padding: 0 0.75rem;
+    background-color: $gray-dark;
+  }
+}
