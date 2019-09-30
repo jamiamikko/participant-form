@@ -19,14 +19,7 @@ class ParticipantListContent extends Component {
 
   render() {
     const items = this.participants.map((participant, index) => {
-      return (
-        <Participant
-          key={index}
-          name={participant.name}
-          email={participant.email}
-          phone={participant.phone}
-        />
-      );
+      return <Participant key={index} data={participant} />;
     });
 
     return (

@@ -20,6 +20,9 @@
   }
 
   &__filter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     background-color: $white;
     padding: 1.5rem;
     margin-bottom: 0.15rem;
@@ -34,6 +37,18 @@
   padding: 1.5rem;
   margin-bottom: 0.15rem;
   height: 4.5rem;
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__actions {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 }
 
 .participant-form {
@@ -55,6 +70,7 @@
   &__button {
     font-size: 1rem;
     padding: 0 0.75rem;
+    height: inherit;
     background-color: $gray-dark;
   }
 }
