@@ -3,7 +3,11 @@ import './participant-list.scss';
 
 class ParticipantListFilter extends Component {
   render() {
-    return <p>Filter</p>;
+    return (
+      <div className="participant-list__filter">
+        <p>Filter</p>
+      </div>
+    );
   }
 }
 
