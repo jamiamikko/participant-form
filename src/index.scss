@@ -1,0 +1,13 @@
+@import './scss/helpers/variables.scss';
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: $gray;
+
+  .app {
+    height: 100%;
+    
+  }
+}

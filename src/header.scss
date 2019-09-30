@@ -1,0 +1,26 @@
+@import './scss/helpers/variables.scss';
+
+.header {
+  display: flex;
+  height: 6rem;
+  background-color: $gray-dark;
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    align-self: center;
+    width: 100%;
+    padding: 0 2rem;
+  }
+
+  &__logo {
+    background-color: white;
+    height: 2rem;
+    width: 2rem;
+  }
+
+  &__heading {
+    color: white;
+    margin: 0;
+  }
+}
