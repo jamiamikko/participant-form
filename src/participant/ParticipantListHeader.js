@@ -2,10 +2,30 @@ import React, { Component } from 'react';
 import './participant-list.scss';
 
 class ParticipantListHeader extends Component {
+  constructor(props) {
+    super(props);
+
+    this.initialState = {
+      name: '',
+      email: '',
+      phone: ''
+    };
+
+    this.state = this.initialState;
+  }
+
+  handleChange = event => {
+    const { name, value } = event.target;
+
+    this.setState({
+      [name]: value
+    });
+  };
+
   submitForm = event => {
     event.preventDefault();
-
-    console.log('Nui');
+    this.props.handleSubmit(this.state);
+    this.setState(this.initialState);
   };
 
   render() {
@@ -14,21 +34,24 @@ class ParticipantListHeader extends Component {
         <form className="participant-form">
           <input
             type="text"
-            name="fullName"
+            name="name"
             placeholder="Full name"
-            className="participant-form__input"
+            onChange={this.handleChange}
+            className="participant-form__input participant-form__input--name"
           />
           <input
             type="email"
             name="email"
             placeholder="E-mail address"
-            className="participant-form__input"
+            onChange={this.handleChange}
+            className="participant-form__input participant-form__input--email"
           />
           <input
             type="tel"
-            name="phoneNumber"
+            name="phone"
             placeholder="Phone number"
-            className="participant-form__input"
+            onChange={this.handleChange}
+            className="participant-form__input participant-form__input--phone"
           />
           <button className="participant-form__button" onClick={this.submitForm}>
             Add new

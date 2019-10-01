@@ -4,21 +4,10 @@ import Participant from './Participant';
 import './participant-list.scss';
 
 class ParticipantListContent extends Component {
-  participants = [
-    {
-      name: 'John',
-      email: 'john.doe@gmail.com',
-      phone: '+35840000000'
-    },
-    {
-      name: 'Jane',
-      email: 'jane.doe@gmail.com',
-      phone: '+35840000001'
-    }
-  ];
-
   render() {
-    const items = this.participants.map((participant, index) => {
+    const { participants } = this.props;
+
+    const items = participants.map((participant, index) => {
       return <Participant key={index} data={participant} />;
     });
 

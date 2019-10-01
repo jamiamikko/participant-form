@@ -7,6 +7,7 @@
 
   &__heading {
     margin: 0;
+    color: $text-color;
   }
 
   &__header {
@@ -20,26 +21,40 @@
   }
 
   &__filter-wrapper {
-    display: grid;
-    grid-template-columns:
-      minmax(auto, 10.25rem)
-      minmax(auto, 17.25rem)
-      minmax(auto, 10.25rem);
-
+    display: flex;
     justify-content: space-between;
-
     background-color: $white;
-    padding: 1.5rem;
+    padding: 0 1.5rem;
     margin-bottom: 0.15rem;
-    height: 2rem;
+    height: 3rem;
   }
 
   &__filter {
     text-align: left;
-    font-size: 1rem;
-    background: transparent;
+    font-size: 0.875rem;
+    line-height: 1rem;
+    font-weight: 500;
+    color: $button-text;
     border: 0;
+    background: transparent;
     height: 3rem;
+    padding: 0;
+    width: auto;
+
+    &--name {
+      flex: 0 1 20%;
+      max-width: 10.25rem;
+    }
+
+    &--email {
+      flex: 0 1 40%;
+      max-width: 17.25rem;
+    }
+
+    &--phone {
+      flex: 0 1 20%;
+      max-width: 10.25rem;
+    }
   }
 }
 
@@ -47,7 +62,7 @@
   display: flex;
   justify-content: space-between;
   background-color: $white;
-  padding: 1.5rem;
+  padding: 0 1.5rem;
   margin-bottom: 0.15rem;
   height: 4.5rem;
 
@@ -55,24 +70,20 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    color: $text-color;
   }
 
   &__actions {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    color: $text-color;
   }
 }
 
 .participant-form {
-  display: grid;
-  grid-template-columns:
-    minmax(auto, 10.25rem)
-    minmax(auto, 17.25rem)
-    minmax(auto, 10.25rem)
-    minmax(auto, 6.75rem);
+  display: flex;
   justify-content: space-between;
-
   height: 2.5rem;
 
   &__input {
@@ -81,6 +92,23 @@
     padding: 0 0.75rem;
     height: 2.5rem;
     border: 1px solid $gray-darker;
+    width: auto;
+    color: $text-color;
+
+    &--name {
+      flex: 0 1 20%;
+      max-width: 10.25rem;
+    }
+
+    &--email {
+      flex: 0 1 40%;
+      max-width: 17.25rem;
+    }
+
+    &--phone {
+      flex: 0 1 20%;
+      max-width: 10.25rem;
+    }
   }
 
   &__button {
@@ -89,5 +117,9 @@
     height: 2.5rem;
     background-color: $gray-dark;
     float: right;
+    flex: 0 1 20%;
+    width: auto;
+    max-width: 6.75rem;
+    color: $text-color;
   }
 }
