@@ -2,11 +2,18 @@ import React, { Component } from 'react';
 import ParticipantListHeader from './ParticipantListHeader';
 import ParticipantListContent from './ParticipantListContent';
 import './participant-list.scss';
+import mockData from '../data/participants.json';
 
 class ParticipantList extends Component {
-  state = {
-    participants: []
-  };
+  constructor(props) {
+    super(props);
+
+    this.initialState = {
+      participants: mockData.participants
+    };
+
+    this.state = this.initialState;
+  }
 
   handleSubmit = data => {
     this.setState({ participants: [...this.state.participants, data] });
