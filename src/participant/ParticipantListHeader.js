@@ -9,18 +9,25 @@ class ParticipantListHeader extends Component {
       name: '',
       email: '',
       phone: '',
-      nameValid: false,
-      emailValid: false,
-      phoneValid: false
+      valid: { name: false, email: false, phone: false },
+      touched: { name: false, email: false, phone: false },
+      formValid: false
     };
 
     this.state = this.initialState;
   }
 
+  validateForm = () => {
+    this.setState({
+      formValid:
+        this.state.valid.name && this.state.valid.email && this.state.valid.phone
+    });
+  };
+
   validateField = (fieldName, value) => {
-    let nameValid = this.state.nameValid;
-    let emailValid = this.state.emailValid;
-    let phoneValid = this.state.phoneValid;
+    let nameValid = this.state.valid.name;
+    let emailValid = this.state.valid.email;
+    let phoneValid = this.state.valid.phone;
 
     switch (fieldName) {
       case 'name':
@@ -36,7 +43,10 @@ class ParticipantListHeader extends Component {
         break;
     }
 
-    this.setState({ nameValid: nameValid, emailValid: emailValid, phoneValid: phoneValid });
+    this.setState(
+      { valid: { name: nameValid, email: emailValid, phone: phoneValid } },
+      this.validateForm
+    );
   };
 
   handleChange = event => {
@@ -44,7 +54,8 @@ class ParticipantListHeader extends Component {
 
     this.setState(
       {
-        [name]: value
+        [name]: value,
+        touched: { ...this.state.touched, [name]: true }
       },
       () => {
         this.validateField(name, value);
@@ -55,10 +66,18 @@ class ParticipantListHeader extends Component {
   submitForm = event => {
     event.preventDefault();
 
-    if (this.state.nameValid && this.state.emailValid && this.state.phone) {
+    if (this.state.formValid) {
       this.props.handleSubmit(this.state);
       this.setState(this.initialState);
     }
+  };
+
+  errorClass = (isTouched, isValid) => {
+    if (!isTouched) {
+      return '';
+    }
+
+    return isValid ? '' : 'error';
   };
 
   render() {
@@ -71,7 +90,10 @@ class ParticipantListHeader extends Component {
             placeholder="Full name"
             onChange={this.handleChange}
             value={this.state.name}
-            className="participant-form__input participant-form__input--name"
+            className={`participant-form__input participant-form__input--name ${this.errorClass(
+              this.state.touched.name,
+              this.state.valid.name
+            )}`}
           />
           <input
             type="email"
@@ -79,7 +101,10 @@ class ParticipantListHeader extends Component {
             placeholder="E-mail address"
             onChange={this.handleChange}
             value={this.state.email}
-            className="participant-form__input participant-form__input--email"
+            className={`participant-form__input participant-form__input--email ${this.errorClass(
+              this.state.touched.email,
+              this.state.valid.email
+            )}`}
           />
           <input
             type="tel"
@@ -87,7 +112,10 @@ class ParticipantListHeader extends Component {
             placeholder="Phone number"
             onChange={this.handleChange}
             value={this.state.phone}
-            className="participant-form__input participant-form__input--phone"
+            className={`participant-form__input participant-form__input--phone ${this.errorClass(
+              this.state.touched.phone,
+              this.state.valid.phone
+            )}`}
           />
           <button className="participant-form__button" onClick={this.submitForm}>
             Add new

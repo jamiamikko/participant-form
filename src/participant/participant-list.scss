@@ -109,6 +109,11 @@
       flex: 0 1 20%;
       max-width: 10.25rem;
     }
+
+    &.error {
+      border-color: red;
+      color: red;
+    }
   }
 
   &__button {
