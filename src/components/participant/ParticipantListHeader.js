@@ -19,8 +19,7 @@ class ParticipantListHeader extends Component {
 
   validateForm = () => {
     this.setState({
-      formValid:
-        this.state.valid.name && this.state.valid.email && this.state.valid.phone
+      formValid: this.state.valid.name && this.state.valid.email && this.state.valid.phone
     });
   };
 
