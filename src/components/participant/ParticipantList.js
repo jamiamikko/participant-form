@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ParticipantListHeader from './ParticipantListHeader';
 import ParticipantListContent from './ParticipantListContent';
 import './participant-list.scss';
-import mockData from '../data/participants.json';
+import mockData from '../../data/participants.json';
 
 class ParticipantList extends Component {
   constructor(props) {
