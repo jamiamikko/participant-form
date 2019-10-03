@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ParticipantListHeader from './ParticipantListHeader';
+import ParticipantListFom from './ParticipantListForm';
 import ParticipantListContent from './ParticipantListContent';
 import './participant-list.scss';
 import mockData from '../../data/participants.json';
@@ -26,7 +26,7 @@ class ParticipantList extends Component {
       <div className="participant-list">
         <h2 className="participant-list__heading">List of participants</h2>
         <div>
-          <ParticipantListHeader handleSubmit={this.handleSubmit} />
+          <ParticipantListFom handleSubmit={this.handleSubmit} />
           <ParticipantListContent participants={participants} />
         </div>
       </div>

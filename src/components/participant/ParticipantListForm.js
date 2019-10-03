@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './participant-list.scss';
 
-class ParticipantListHeader extends Component {
+class ParticipantListForm extends Component {
   constructor(props) {
     super(props);
 
@@ -125,4 +125,4 @@ class ParticipantListHeader extends Component {
   }
 }
 
-export default ParticipantListHeader;
+export default ParticipantListForm;

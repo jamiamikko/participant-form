@@ -8,7 +8,7 @@ class ParticipantListContent extends Component {
     const { participants } = this.props;
 
     const items = participants.map((participant, index) => {
-      return <Participant key={index} data={participant} />;
+      return <Participant key={participant.id} data={participant} />;
     });
 
     return (
