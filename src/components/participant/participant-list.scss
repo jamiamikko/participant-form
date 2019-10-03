@@ -1,0 +1,135 @@
+@import '../../scss/helpers/variables.scss';
+@import '../../scss/helpers/mixins.scss';
+
+.participant-list {
+  max-width: 57rem;
+  margin: 0 auto;
+
+  &__heading {
+    margin: 0;
+    color: $text-color;
+  }
+
+  &__header {
+    margin-top: 4.5rem;
+    background-color: $white;
+    padding: 1rem;
+  }
+
+  &__content {
+    margin-top: 0.5rem;
+  }
+
+  &__filter-wrapper {
+    display: flex;
+    justify-content: space-between;
+    background-color: $white;
+    padding: 0 1.5rem;
+    margin-bottom: 0.15rem;
+    height: 3rem;
+  }
+
+  &__filter {
+    text-align: left;
+    font-size: 0.875rem;
+    line-height: 1rem;
+    font-weight: 500;
+    color: $button-text;
+    border: 0;
+    background: transparent;
+    height: 3rem;
+    padding: 0;
+    width: auto;
+
+    &--name {
+      flex: 0 1 20%;
+      max-width: 10.25rem;
+    }
+
+    &--email {
+      flex: 0 1 40%;
+      max-width: 17.25rem;
+    }
+
+    &--phone {
+      flex: 0 1 20%;
+      max-width: 10.25rem;
+    }
+  }
+}
+
+.participant {
+  display: flex;
+  justify-content: space-between;
+  background-color: $white;
+  padding: 0 1.5rem;
+  margin-bottom: 0.15rem;
+  height: 4.5rem;
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: $text-color;
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: center;
+    color: $text-color;
+  }
+
+  &__button {
+    border: 0;
+    background: transparent;
+    color: $button-text;
+  }
+}
+
+.participant-form {
+  display: flex;
+  justify-content: space-between;
+  height: 2.5rem;
+
+  &__input {
+    font-size: 1rem;
+    background-color: $gray-light;
+    padding: 0 0.75rem;
+    height: 2.5rem;
+    border: 1px solid $gray-darker;
+    width: auto;
+    color: $text-color;
+
+    &--name {
+      flex: 0 1 20%;
+      max-width: 10.25rem;
+    }
+
+    &--email {
+      flex: 0 1 40%;
+      max-width: 17.25rem;
+    }
+
+    &--phone {
+      flex: 0 1 20%;
+      max-width: 10.25rem;
+    }
+
+    &.error {
+      border-color: red;
+      color: red;
+    }
+  }
+
+  &__button {
+    font-size: 1rem;
+    padding: 0 0.75rem;
+    height: 2.5rem;
+    background-color: $gray-dark;
+    float: right;
+    flex: 0 1 20%;
+    width: auto;
+    max-width: 6.75rem;
+    color: $text-color;
+  }
+}

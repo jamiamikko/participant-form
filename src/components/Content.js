@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ParticipantList from './participant-list/ParticipantList';
+import ParticipantList from './participant/ParticipantList';
 import './content.scss';
 
 class Content extends Component {
