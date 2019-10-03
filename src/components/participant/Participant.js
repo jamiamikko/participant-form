@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import EditIcon from '@material-ui/icons/Edit';
+import DeleteIcon from '@material-ui/icons/Delete';
 import './participant-list.scss';
 
 class Participant extends Component {
@@ -12,7 +14,14 @@ class Participant extends Component {
             {data.name} - {data.email} {data.phone}
           </p>
         </div>
-        <div className="participant__actions">Actions</div>
+        <div className="participant__actions">
+          <button className="participant__button">
+            <EditIcon />
+          </button>
+          <button className="participant__button">
+            <DeleteIcon />
+          </button>
+        </div>
       </div>
     );
   }

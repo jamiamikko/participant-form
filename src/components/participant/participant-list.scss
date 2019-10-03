@@ -75,9 +75,14 @@
 
   &__actions {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     color: $text-color;
+  }
+
+  &__button {
+    border: 0;
+    background: transparent;
+    color: $button-text;
   }
 }
 
