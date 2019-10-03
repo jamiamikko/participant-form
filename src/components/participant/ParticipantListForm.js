@@ -1,14 +1,18 @@
 import React, { Component } from 'react';
+import { Random, uuid4 } from 'random-js';
 import './participant-list.scss';
 
 class ParticipantListForm extends Component {
   constructor(props) {
     super(props);
 
+    this.random = new Random();
+
     this.initialState = {
       name: '',
       email: '',
       phone: '',
+      id: '',
       valid: { name: false, email: false, phone: false },
       touched: { name: false, email: false, phone: false },
       formValid: false
@@ -66,8 +70,12 @@ class ParticipantListForm extends Component {
     event.preventDefault();
 
     if (this.state.formValid) {
-      this.props.handleSubmit(this.state);
-      this.setState(this.initialState);
+      const participantId = uuid4(this.random.engine);
+
+      this.setState({ id: participantId }, () => {
+        this.props.handleSubmit(this.state);
+        this.setState(this.initialState);
+      });
     }
   };
 
