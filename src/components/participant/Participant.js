@@ -31,6 +31,10 @@ class Participant extends Component {
     this.setState({ editMode: changeMode });
   };
 
+  saveChanges = () => {
+    console.log('Nui');
+  };
+
   render() {
     const data = this.props.data;
 
@@ -80,6 +84,11 @@ class Participant extends Component {
           <div className={`participant__actions--edit ${this.state.editMode ? '' : 'hidden'}`}>
             <button className="participant__edit-button" onClick={this.toggleEditMode}>
               Cancel
+            </button>
+            <button
+              className="participant__edit-button participant__edit-button--save"
+              onClick={this.saveChanges}>
+              Save
             </button>
           </div>
         </div>

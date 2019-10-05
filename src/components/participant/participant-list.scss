@@ -9,8 +9,6 @@
   border: 1px solid $gray-darker;
   width: auto;
   color: $text-color;
-  color: $text-color;
-  cursor: pointer;
 }
 
 %button-base {
@@ -18,7 +16,8 @@
   padding: 0 0.75rem;
   height: 2.5rem;
   background-color: $gray-dark;
-  width: auto;
+  cursor: pointer;
+  border: 0;
 }
 
 .participant-list {
@@ -118,18 +117,23 @@
     cursor: pointer;
   }
 
-  &__edit-button {
-    @extend %button-base;
-  }
-
   &__edit {
     display: flex;
     align-items: center;
-    justify-content: space-between;
     width: 100%;
 
     &-input {
       @extend %input-base;
+    }
+
+    &-button {
+      @extend %button-base;
+      color: $blue;
+
+      &--save {
+        color: $white;
+        background-color: $blue;
+      }
     }
   }
 }
@@ -167,6 +171,8 @@
     @extend %button-base;
     float: right;
     flex: 0 1 20%;
+    width: auto;
     max-width: 6.75rem;
+    color: $text-color;
   }
 }
