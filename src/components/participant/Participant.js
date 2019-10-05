@@ -18,7 +18,11 @@ class Participant extends Component {
           <button className="participant__button">
             <EditIcon />
           </button>
-          <button className="participant__button">
+          <button
+            className="participant__button"
+            onClick={() => {
+              this.props.deleteParticipant(data.id);
+            }}>
             <DeleteIcon />
           </button>
         </div>

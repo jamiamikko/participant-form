@@ -83,6 +83,7 @@
     border: 0;
     background: transparent;
     color: $button-text;
+    cursor: pointer;
   }
 }
 
@@ -131,5 +132,6 @@
     width: auto;
     max-width: 6.75rem;
     color: $text-color;
+    cursor: pointer;
   }
 }

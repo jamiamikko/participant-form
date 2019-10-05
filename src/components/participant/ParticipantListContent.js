@@ -5,10 +5,16 @@ import './participant-list.scss';
 
 class ParticipantListContent extends Component {
   render() {
-    const { participants } = this.props;
+    const { participants, deleteParticipant } = this.props;
 
     const items = participants.map((participant, index) => {
-      return <Participant key={participant.id} data={participant} />;
+      return (
+        <Participant
+          key={participant.id}
+          data={participant}
+          deleteParticipant={deleteParticipant}
+        />
+      );
     });
 
     return (
