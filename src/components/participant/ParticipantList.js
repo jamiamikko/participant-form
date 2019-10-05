@@ -25,6 +25,16 @@ class ParticipantList extends Component {
     });
   };
 
+  updateParticipant = (data, index) => {
+    const { participants } = this.state;
+
+    let updatedParticipants = participants;
+
+    updatedParticipants[index] = data;
+
+    this.setState({ participants: updatedParticipants });
+  };
+
   handleSubmit = data => {
     this.setState({ participants: [...this.state.participants, data] });
   };
@@ -40,6 +50,7 @@ class ParticipantList extends Component {
           <ParticipantListContent
             participants={participants}
             deleteParticipant={this.deleteParticipant}
+            updateParticipant={this.updateParticipant}
           />
         </div>
       </div>

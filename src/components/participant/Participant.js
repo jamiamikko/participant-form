@@ -11,18 +11,59 @@ class Participant extends Component {
       name: this.props.data.name,
       email: this.props.data.email,
       phone: this.props.data.phone,
-      editMode: false
+      id: this.props.data.id,
+      editMode: false,
+      valid: { name: true, email: true, phone: true },
+      touched: { name: false, email: false, phone: false },
+      formValid: true
     };
 
     this.state = this.initialState;
   }
 
+  validateForm = () => {
+    this.setState({
+      formValid: this.state.valid.name && this.state.valid.email && this.state.valid.phone
+    });
+  };
+
+  validateField = (fieldName, value) => {
+    let nameValid = this.state.valid.name;
+    let emailValid = this.state.valid.email;
+    let phoneValid = this.state.valid.phone;
+
+    switch (fieldName) {
+      case 'name':
+        nameValid = value !== '' ? true : false;
+        break;
+      case 'email':
+        emailValid = value !== '' ? true : false;
+        break;
+      case 'phone':
+        phoneValid = value !== '' ? true : false;
+        break;
+      default:
+        break;
+    }
+
+    this.setState(
+      { valid: { name: nameValid, email: emailValid, phone: phoneValid } },
+      this.validateForm
+    );
+  };
+
   handleChange = event => {
     const { name, value } = event.target;
 
-    this.setState({
-      [name]: value
-    });
+    this.setState(
+      {
+        [name]: value,
+        touched: { ...this.state.touched, [name]: true }
+      },
+      () => {
+        this.validateField(name, value);
+      }
+    );
   };
 
   toggleEditMode = () => {
@@ -32,7 +73,29 @@ class Participant extends Component {
   };
 
   saveChanges = () => {
-    console.log('Nui');
+    if (this.state.formValid) {
+      let stateCopy = this.state;
+
+      this.setState(stateCopy, () => {
+        delete stateCopy.valid;
+        delete stateCopy.touched;
+        delete stateCopy.formValid;
+        delete stateCopy.editMode;
+
+        const index = this.props.index;
+
+        this.props.updateParticipant(stateCopy, index);
+        this.toggleEditMode();
+      });
+    }
+  };
+
+  errorClass = (isTouched, isValid) => {
+    if (!isTouched) {
+      return '';
+    }
+
+    return isValid ? '' : 'error';
   };
 
   render() {
@@ -46,27 +109,38 @@ class Participant extends Component {
           </p>
         </div>
         <div className={`participant__edit ${this.state.editMode ? '' : 'hidden'}`}>
-          <input
-            className="participant__edit-input"
-            type="text"
-            name="name"
-            onChange={this.handleChange}
-            value={this.state.name}
-          />
-          <input
-            className="participant__edit-input"
-            type="email"
-            name="email"
-            onChange={this.handleChange}
-            value={this.state.email}
-          />
-          <input
-            className="participant__edit-input"
-            type="tel"
-            name="phone"
-            onChange={this.handleChange}
-            value={this.state.phone}
-          />
+          <form>
+            <input
+              className={`participant__edit-input ${this.errorClass(
+                this.state.touched.name,
+                this.state.valid.name
+              )}`}
+              type="text"
+              name="name"
+              onChange={this.handleChange}
+              value={this.state.name}
+            />
+            <input
+              className={`participant__edit-input ${this.errorClass(
+                this.state.touched.email,
+                this.state.valid.email
+              )}`}
+              type="email"
+              name="email"
+              onChange={this.handleChange}
+              value={this.state.email}
+            />
+            <input
+              className={`participant__edit-input ${this.errorClass(
+                this.state.touched.phone,
+                this.state.valid.phone
+              )}`}
+              type="tel"
+              name="phone"
+              onChange={this.handleChange}
+              value={this.state.phone}
+            />
+          </form>
         </div>
         <div className="participant__actions-wrapper">
           <div className={`participant__actions ${!this.state.editMode ? '' : 'hidden'}`}>

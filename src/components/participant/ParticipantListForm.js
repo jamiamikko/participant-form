@@ -73,7 +73,13 @@ class ParticipantListForm extends Component {
       const participantId = uuid4(this.random.engine);
 
       this.setState({ id: participantId }, () => {
-        this.props.handleSubmit(this.state);
+        let stateCopy = this.state;
+
+        delete stateCopy.valid;
+        delete stateCopy.touched;
+        delete stateCopy.formValid;
+
+        this.props.handleSubmit(stateCopy);
         this.setState(this.initialState);
       });
     }

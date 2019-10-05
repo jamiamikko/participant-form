@@ -9,6 +9,11 @@
   border: 1px solid $gray-darker;
   width: auto;
   color: $text-color;
+
+  &.error {
+    border-color: red;
+    color: red;
+  }
 }
 
 %button-base {
@@ -159,11 +164,6 @@
     &--phone {
       flex: 0 1 20%;
       max-width: 10.25rem;
-    }
-
-    &.error {
-      border-color: red;
-      color: red;
     }
   }
 
