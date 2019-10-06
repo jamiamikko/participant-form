@@ -47,6 +47,19 @@
   }
 
   &__filter {
+    display: flex;
+    align-items: center;
+
+    font-size: 0.875rem;
+    line-height: 1rem;
+    font-weight: 500;
+    color: $button-text;
+    border: 0;
+    background: transparent;
+    height: 100%;
+    padding: 0;
+    width: 100%;
+
     &-wrapper {
       background-color: $white;
       padding: 0 1.5rem;
@@ -63,16 +76,20 @@
       min-width: 100%;
     }
 
-    text-align: left;
-    font-size: 0.875rem;
-    line-height: 1rem;
-    font-weight: 500;
-    color: $button-text;
-    border: 0;
-    background: transparent;
-    height: 100%;
-    padding: 0;
-    width: 100%;
+    &.active {
+      color: $text-color;
+    }
+
+    &-icon {
+      display: none !important;
+
+      &.active {
+        display: inline-block !important;
+        margin-left: 0.75rem;
+        font-size: 1.25rem !important;
+        font-weight: normal;
+      }
+    }
   }
 }
 
