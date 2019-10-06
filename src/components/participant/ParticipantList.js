@@ -15,6 +15,26 @@ class ParticipantList extends Component {
     this.state = this.initialState;
   }
 
+  deleteParticipant = participantId => {
+    const { participants } = this.state;
+
+    this.setState({
+      participants: participants.filter(participant => {
+        return participant.id !== participantId;
+      })
+    });
+  };
+
+  updateParticipant = (data, index) => {
+    const { participants } = this.state;
+
+    let updatedParticipants = participants;
+
+    updatedParticipants[index] = data;
+
+    this.setState({ participants: updatedParticipants });
+  };
+
   handleSubmit = data => {
     this.setState({ participants: [...this.state.participants, data] });
   };
@@ -27,7 +47,11 @@ class ParticipantList extends Component {
         <h2 className="participant-list__heading">List of participants</h2>
         <div>
           <ParticipantListFom handleSubmit={this.handleSubmit} />
-          <ParticipantListContent participants={participants} />
+          <ParticipantListContent
+            participants={participants}
+            deleteParticipant={this.deleteParticipant}
+            updateParticipant={this.updateParticipant}
+          />
         </div>
       </div>
     );

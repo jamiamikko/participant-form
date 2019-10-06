@@ -1,6 +1,29 @@
 @import '../../scss/helpers/variables.scss';
 @import '../../scss/helpers/mixins.scss';
 
+%input-base {
+  font-size: 1rem;
+  background-color: $gray-light;
+  padding: 0 0.75rem;
+  border: 1px solid $gray-darker;
+  width: auto;
+  color: $text-color;
+
+  &.error {
+    border-color: red;
+    color: red;
+  }
+}
+
+%button-base {
+  font-size: 1rem;
+  padding: 0 0.75rem;
+  height: 2.5rem;
+  background-color: $gray-dark;
+  cursor: pointer;
+  border: 0;
+}
+
 .participant-list {
   max-width: 57rem;
   margin: 0 auto;
@@ -16,20 +39,30 @@
     padding: 1rem;
   }
 
-  &__content {
+  &__table {
+    display: grid;
     margin-top: 0.5rem;
-  }
-
-  &__filter-wrapper {
-    display: flex;
-    justify-content: space-between;
-    background-color: $white;
-    padding: 0 1.5rem;
-    margin-bottom: 0.15rem;
-    height: 3rem;
+    width: 100%;
+    flex: 1;
   }
 
   &__filter {
+    &-wrapper {
+      background-color: $white;
+      padding: 0 1.5rem;
+      margin-bottom: 0.15rem;
+      height: 3rem;
+    }
+
+    &-grid {
+      display: grid;
+      grid-template-columns: 17.5% 28.5% 17.5% auto;
+      grid-gap: 2%;
+      flex: 1;
+      height: 100%;
+      min-width: 100%;
+    }
+
     text-align: left;
     font-size: 0.875rem;
     line-height: 1rem;
@@ -37,99 +70,108 @@
     color: $button-text;
     border: 0;
     background: transparent;
-    height: 3rem;
+    height: 100%;
     padding: 0;
-    width: auto;
+    width: 100%;
+  }
+}
 
-    &--name {
-      flex: 0 1 20%;
-      max-width: 10.25rem;
-    }
+.participant-form {
+  display: grid;
+  grid-template-columns: 18% 28% 18% auto;
+  grid-gap: 2%;
+  flex: 1;
+  height: 2.5rem;
+  min-width: 100%;
 
-    &--email {
-      flex: 0 1 40%;
-      max-width: 17.25rem;
-    }
+  &__input {
+    @extend %input-base;
+    height: 100%;
+  }
 
-    &--phone {
-      flex: 0 1 20%;
-      max-width: 10.25rem;
-    }
+  &__button {
+    @extend %button-base;
+    justify-self: end;
+    width: 7rem;
+    color: $text-color;
   }
 }
 
 .participant {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 78.25% auto;
   background-color: $white;
   padding: 0 1.5rem;
   margin-bottom: 0.15rem;
   height: 4.5rem;
 
   &__info {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: 21.5% 36.25% 36.25%;
+    grid-gap: 2%;
     color: $text-color;
+    width: 100%;
+    height: 100%;
+
+    &-cel {
+      display: flex;
+      align-items: center;
+    }
   }
 
   &__actions {
     display: flex;
-    justify-content: center;
+    align-items: center;
     color: $text-color;
+    height: 100%;
+
+    &-wrapper {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    &--edit {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      width: 100%;
+    }
   }
 
-  &__button {
+  &__icon-button {
     border: 0;
     background: transparent;
     color: $button-text;
-  }
-}
-
-.participant-form {
-  display: flex;
-  justify-content: space-between;
-  height: 2.5rem;
-
-  &__input {
-    font-size: 1rem;
-    background-color: $gray-light;
-    padding: 0 0.75rem;
-    height: 2.5rem;
-    border: 1px solid $gray-darker;
-    width: auto;
-    color: $text-color;
-
-    &--name {
-      flex: 0 1 20%;
-      max-width: 10.25rem;
-    }
-
-    &--email {
-      flex: 0 1 40%;
-      max-width: 17.25rem;
-    }
-
-    &--phone {
-      flex: 0 1 20%;
-      max-width: 10.25rem;
-    }
-
-    &.error {
-      border-color: red;
-      color: red;
-    }
+    cursor: pointer;
   }
 
-  &__button {
-    font-size: 1rem;
-    padding: 0 0.75rem;
-    height: 2.5rem;
-    background-color: $gray-dark;
-    float: right;
-    flex: 0 1 20%;
-    width: auto;
-    max-width: 6.75rem;
-    color: $text-color;
+  &__edit {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+
+    &-form {
+      display: grid;
+      grid-template-columns: 27% 43.5% 27.5%;
+      grid-gap: 2%;
+    }
+
+    &-input {
+      @extend %input-base;
+      height: 2.5rem;
+    }
+
+    &-button {
+      @extend %button-base;
+      color: $blue;
+
+      &--save {
+        color: $white;
+        background-color: $blue;
+        margin-left: 0.5rem;
+      }
+    }
   }
 }

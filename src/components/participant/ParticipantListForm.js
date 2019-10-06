@@ -73,7 +73,13 @@ class ParticipantListForm extends Component {
       const participantId = uuid4(this.random.engine);
 
       this.setState({ id: participantId }, () => {
-        this.props.handleSubmit(this.state);
+        let stateCopy = this.state;
+
+        delete stateCopy.valid;
+        delete stateCopy.touched;
+        delete stateCopy.formValid;
+
+        this.props.handleSubmit(stateCopy);
         this.setState(this.initialState);
       });
     }
@@ -97,7 +103,7 @@ class ParticipantListForm extends Component {
             placeholder="Full name"
             onChange={this.handleChange}
             value={this.state.name}
-            className={`participant-form__input participant-form__input--name ${this.errorClass(
+            className={`participant-form__input ${this.errorClass(
               this.state.touched.name,
               this.state.valid.name
             )}`}
@@ -108,7 +114,7 @@ class ParticipantListForm extends Component {
             placeholder="E-mail address"
             onChange={this.handleChange}
             value={this.state.email}
-            className={`participant-form__input participant-form__input--email ${this.errorClass(
+            className={`participant-form__input ${this.errorClass(
               this.state.touched.email,
               this.state.valid.email
             )}`}
@@ -119,7 +125,7 @@ class ParticipantListForm extends Component {
             placeholder="Phone number"
             onChange={this.handleChange}
             value={this.state.phone}
-            className={`participant-form__input participant-form__input--phone ${this.errorClass(
+            className={`participant-form__input ${this.errorClass(
               this.state.touched.phone,
               this.state.valid.phone
             )}`}
