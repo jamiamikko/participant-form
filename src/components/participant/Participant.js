@@ -123,7 +123,7 @@ class Participant extends Component {
           </div>
         </td>
         <td className={`participant__edit ${this.state.editMode ? '' : 'hidden'}`}>
-          <form>
+          <form className="participant__edit-form">
             <input
               className={`participant__edit-input ${this.errorClass(
                 this.state.touched.name,

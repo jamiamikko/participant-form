@@ -22,7 +22,7 @@ class ParticipantListContent extends Component {
     return (
       <table className="participant-list__table">
         <ParticipantListFilter />
-        <tbody class="participant-list__content">{items}</tbody>
+        <tbody>{items}</tbody>
       </table>
     );
   }
