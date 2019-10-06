@@ -39,6 +39,16 @@ class ParticipantList extends Component {
     this.setState({ participants: [...this.state.participants, data] });
   };
 
+  sortBy = type => {
+    const { participants } = this.state;
+
+    let sortParticipants = participants.sort((a, b) => {
+      return a[type] > b[type] ? 1 : -1;
+    });
+
+    this.setState({ participants: sortParticipants });
+  };
+
   render() {
     const { participants } = this.state;
 
@@ -51,6 +61,7 @@ class ParticipantList extends Component {
             participants={participants}
             deleteParticipant={this.deleteParticipant}
             updateParticipant={this.updateParticipant}
+            sortBy={this.sortBy}
           />
         </div>
       </div>

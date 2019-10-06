@@ -5,7 +5,7 @@ import './participant-list.scss';
 
 class ParticipantListContent extends Component {
   render() {
-    const { participants, deleteParticipant, updateParticipant } = this.props;
+    const { participants, deleteParticipant, updateParticipant, sortBy } = this.props;
 
     const items = participants.map((participant, index) => {
       return (
@@ -21,7 +21,7 @@ class ParticipantListContent extends Component {
 
     return (
       <table className="participant-list__table">
-        <ParticipantListFilter />
+        <ParticipantListFilter sortBy={sortBy} />
         <tbody>{items}</tbody>
       </table>
     );
