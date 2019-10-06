@@ -99,9 +99,7 @@
 
 .participant {
   display: grid;
-  justify-content: space-between;
   grid-template-columns: 78.25% auto;
-  grid-gap: 2%;
   background-color: $white;
   padding: 0 1.5rem;
   margin-bottom: 0.15rem;
@@ -130,13 +128,14 @@
 
     &-wrapper {
       display: flex;
-      justify-content: center;
+      justify-content: flex-end;
     }
 
     &--edit {
       display: flex;
-      justify-content: center;
+      justify-content: flex-end;
       align-items: center;
+      width: 100%;
     }
   }
 
@@ -171,6 +170,7 @@
       &--save {
         color: $white;
         background-color: $blue;
+        margin-left: 0.5rem;
       }
     }
   }
