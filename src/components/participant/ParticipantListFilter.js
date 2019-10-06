@@ -7,13 +7,31 @@ class ParticipantListFilter extends Component {
       <thead className="participant-list__filter-wrapper">
         <tr className="participant-list__filter-grid">
           <th>
-            <button className="participant-list__filter">Name</button>
+            <button
+              className="participant-list__filter"
+              onClick={() => {
+                this.props.sortBy('name');
+              }}>
+              Name
+            </button>
           </th>
           <th>
-            <button className="participant-list__filter">E-mail address</button>
+            <button
+              className="participant-list__filter"
+              onClick={() => {
+                this.props.sortBy('email');
+              }}>
+              E-mail address
+            </button>
           </th>
           <th>
-            <button className="participant-list__filter">Phone number</button>
+            <button
+              className="participant-list__filter"
+              onClick={() => {
+                this.props.sortBy('phone');
+              }}>
+              Phone number
+            </button>
           </th>
         </tr>
       </thead>
