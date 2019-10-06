@@ -72,21 +72,29 @@ class Participant extends Component {
     this.setState({ editMode: changeMode });
   };
 
+  resetEditMode = () => {
+    this.setState({
+      editMode: false,
+      valid: { name: true, email: true, phone: true },
+      touched: { name: false, email: false, phone: false },
+      formValid: true
+    });
+  };
+
   saveChanges = () => {
     if (this.state.formValid) {
       let stateCopy = this.state;
 
-      this.setState(stateCopy, () => {
-        delete stateCopy.valid;
-        delete stateCopy.touched;
-        delete stateCopy.formValid;
-        delete stateCopy.editMode;
+      delete stateCopy.valid;
+      delete stateCopy.touched;
+      delete stateCopy.formValid;
+      delete stateCopy.editMode;
 
-        const index = this.props.index;
+      const index = this.props.index;
 
-        this.props.updateParticipant(stateCopy, index);
-        this.toggleEditMode();
-      });
+      this.props.updateParticipant(stateCopy, index);
+
+      this.resetEditMode();
     }
   };
 
