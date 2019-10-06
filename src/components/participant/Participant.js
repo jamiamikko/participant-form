@@ -110,13 +110,13 @@ class Participant extends Component {
     const data = this.props.data;
 
     return (
-      <div className="participant">
-        <div className={`participant__info ${!this.state.editMode ? '' : 'hidden'}`}>
+      <tr className="participant">
+        <td className={`participant__info ${!this.state.editMode ? '' : 'hidden'}`}>
           <p>
             {data.name} - {data.email} {data.phone}
           </p>
-        </div>
-        <div className={`participant__edit ${this.state.editMode ? '' : 'hidden'}`}>
+        </td>
+        <td className={`participant__edit ${this.state.editMode ? '' : 'hidden'}`}>
           <form>
             <input
               className={`participant__edit-input ${this.errorClass(
@@ -149,8 +149,8 @@ class Participant extends Component {
               value={this.state.phone}
             />
           </form>
-        </div>
-        <div className="participant__actions-wrapper">
+        </td>
+        <td className="participant__actions-wrapper">
           <div className={`participant__actions ${!this.state.editMode ? '' : 'hidden'}`}>
             <button className="participant__icon-button">
               <EditIcon onClick={this.toggleEditMode} />
@@ -173,8 +173,8 @@ class Participant extends Component {
               Save
             </button>
           </div>
-        </div>
-      </div>
+        </td>
+      </tr>
     );
   }
 }

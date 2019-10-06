@@ -40,20 +40,33 @@
     padding: 1rem;
   }
 
-  &__content {
+  &__table {
+    display: grid;
     margin-top: 0.5rem;
+    width: 100%;
   }
 
-  &__filter-wrapper {
-    display: flex;
-    justify-content: space-between;
-    background-color: $white;
-    padding: 0 1.5rem;
-    margin-bottom: 0.15rem;
-    height: 3rem;
+  &__content {
+    display: grid;
   }
 
   &__filter {
+    &-wrapper {
+      background-color: $white;
+      padding: 0 1.5rem;
+      margin-bottom: 0.15rem;
+      height: 3rem;
+    }
+
+    &-grid {
+      display: grid;
+      grid-template-columns: 10rem 17rem 10rem 7rem;
+      grid-gap: 1.2rem;
+      flex: 1;
+      height: 100%;
+      min-width: 100%;
+    }
+
     text-align: left;
     font-size: 0.875rem;
     line-height: 1rem;
@@ -61,24 +74,9 @@
     color: $button-text;
     border: 0;
     background: transparent;
-    height: 3rem;
+    height: 100%;
     padding: 0;
-    width: auto;
-
-    &--name {
-      flex: 0 1 20%;
-      max-width: 10.25rem;
-    }
-
-    &--email {
-      flex: 0 1 40%;
-      max-width: 17.25rem;
-    }
-
-    &--phone {
-      flex: 0 1 20%;
-      max-width: 10.25rem;
-    }
+    width: 100%;
   }
 }
 
@@ -144,35 +142,21 @@
 }
 
 .participant-form {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 10rem 17rem 10rem 7rem;
+  grid-gap: 1.2rem;
+  flex: 1;
   height: 2.5rem;
+  min-width: 100%;
 
   &__input {
     @extend %input-base;
-
-    &--name {
-      flex: 0 1 20%;
-      max-width: 10.25rem;
-    }
-
-    &--email {
-      flex: 0 1 40%;
-      max-width: 17.25rem;
-    }
-
-    &--phone {
-      flex: 0 1 20%;
-      max-width: 10.25rem;
-    }
   }
 
   &__button {
     @extend %button-base;
     float: right;
-    flex: 0 1 20%;
     width: auto;
-    max-width: 6.75rem;
     color: $text-color;
   }
 }

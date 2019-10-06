@@ -20,10 +20,10 @@ class ParticipantListContent extends Component {
     });
 
     return (
-      <div className="participant-list__content">
+      <table className="participant-list__table">
         <ParticipantListFilter />
-        <div>{items}</div>
-      </div>
+        <tbody class="participant-list__content">{items}</tbody>
+      </table>
     );
   }
 }
