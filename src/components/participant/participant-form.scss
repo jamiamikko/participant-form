@@ -1,22 +1,42 @@
 @import '../../scss/helpers/variables.scss';
+@import '../../scss/helpers/mixins.scss';
 @import '../../scss/helpers/placeholders.scss';
 
 .participant-form {
-  display: grid;
-  grid-template-columns: 18% 30% 22% auto;
-  grid-gap: 2%;
-  align-items: center;
+  display: flex;
+  flex-flow: row wrap;
+
+  @include media-min($tablet-bp) {
+    display: grid;
+    grid-template-columns: 18% 30% 22% auto;
+    grid-gap: 2%;
+    align-items: center;
+  }
 
   &__input {
     @extend %input-base;
     height: 2.5rem;
+
+    @include media-max($tablet-bp) {
+      flex: 0 1 49%;
+      padding: 0;
+    }
   }
 
   &__button {
     @extend %button-base;
-    justify-self: end;
-    width: 7rem;
+
     color: $gray-7;
     height: 2.5rem;
+
+    @include media-min($tablet-bp) {
+      justify-self: end;
+      width: 7rem;
+    }
+
+    @include media-max($tablet-bp) {
+      flex: 0 1 49%;
+      padding: 0;
+    }
   }
 }
