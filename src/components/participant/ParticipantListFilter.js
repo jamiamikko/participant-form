@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
-import './participant-list.scss';
+import './participant.scss';
 
 class ParticipantListFilter extends Component {
   constructor(props) {

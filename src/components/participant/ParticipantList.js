@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ParticipantListFom from './ParticipantListForm';
 import ParticipantListContent from './ParticipantListContent';
-import './participant-list.scss';
+import './participant.scss';
 import mockData from '../../data/participants.json';
 
 class ParticipantList extends Component {

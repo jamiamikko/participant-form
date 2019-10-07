@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ParticipantListFilter from './ParticipantListFilter';
 import Participant from './Participant';
-import './participant-list.scss';
+import './participant.scss';
 
 class ParticipantListContent extends Component {
   render() {

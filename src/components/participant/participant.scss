@@ -69,7 +69,7 @@
 
     &-grid {
       display: grid;
-      grid-template-columns: 17.5% 28.5% 17.5% auto;
+      grid-template-columns: 17.5% 30.5% 22.5% auto;
       grid-gap: 2%;
       flex: 1;
       height: 100%;
@@ -95,7 +95,7 @@
 
 .participant-form {
   display: grid;
-  grid-template-columns: 18% 28% 18% auto;
+  grid-template-columns: 18% 30% 22% auto;
   grid-gap: 2%;
   flex: 1;
   height: 2.5rem;
@@ -116,7 +116,7 @@
 
 .participant {
   display: grid;
-  grid-template-columns: 78.25% auto;
+  grid-template-columns: 74.25% auto;
   background-color: $white;
   padding: 0 1.5rem;
   margin-bottom: 0.15rem;
@@ -125,7 +125,7 @@
   &__info {
     display: grid;
     justify-content: space-between;
-    grid-template-columns: 21.5% 36.25% 36.25%;
+    grid-template-columns: 24% 42% 34%;
     grid-gap: 2%;
     color: $text-color;
     width: 100%;
@@ -171,7 +171,7 @@
 
     &-form {
       display: grid;
-      grid-template-columns: 27% 43.5% 27.5%;
+      grid-template-columns: 27% 46.5% auto;
       grid-gap: 2%;
     }
 
