@@ -1,0 +1,22 @@
+%input-base {
+  font-size: 1rem;
+  background-color: $gray-light;
+  padding: 0 0.75rem;
+  border: 1px solid $gray-darker;
+  width: auto;
+  color: $text-color;
+
+  &.error {
+    border-color: red;
+    color: red;
+  }
+}
+
+%button-base {
+  font-size: 1rem;
+  padding: 0 0.75rem;
+  height: 2.5rem;
+  background-color: $gray-dark;
+  cursor: pointer;
+  border: 0;
+}

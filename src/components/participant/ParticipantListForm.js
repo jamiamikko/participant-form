@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Random, uuid4 } from 'random-js';
-import './participant.scss';
+import './participant-form.scss';
 
 class ParticipantListForm extends Component {
   constructor(props) {

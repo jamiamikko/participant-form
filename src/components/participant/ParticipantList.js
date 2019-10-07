@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ParticipantListFom from './ParticipantListForm';
 import ParticipantListContent from './ParticipantListContent';
-import './participant.scss';
+import './participant-list.scss';
 import mockData from '../../data/participants.json';
 
 class ParticipantList extends Component {
@@ -55,15 +55,13 @@ class ParticipantList extends Component {
     return (
       <div className="participant-list">
         <h2 className="participant-list__heading">List of participants</h2>
-        <div>
-          <ParticipantListFom handleSubmit={this.handleSubmit} />
-          <ParticipantListContent
-            participants={participants}
-            deleteParticipant={this.deleteParticipant}
-            updateParticipant={this.updateParticipant}
-            sortBy={this.sortBy}
-          />
-        </div>
+        <ParticipantListFom handleSubmit={this.handleSubmit} />
+        <ParticipantListContent
+          participants={participants}
+          deleteParticipant={this.deleteParticipant}
+          updateParticipant={this.updateParticipant}
+          sortBy={this.sortBy}
+        />
       </div>
     );
   }

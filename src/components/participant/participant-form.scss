@@ -1,0 +1,22 @@
+@import '../../scss/helpers/variables.scss';
+@import '../../scss/helpers/placeholders.scss';
+
+.participant-form {
+  display: grid;
+  grid-template-columns: 18% 30% 22% auto;
+  grid-gap: 2%;
+  align-items: center;
+
+  &__input {
+    @extend %input-base;
+    height: 2.5rem;
+  }
+
+  &__button {
+    @extend %button-base;
+    justify-self: end;
+    width: 7rem;
+    color: $text-color;
+    height: 2.5rem;
+  }
+}
