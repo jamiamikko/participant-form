@@ -19,8 +19,8 @@
   &__input {
     @extend %input-base;
     height: 2.5rem;
-    margin-bottom: 0.5rem;
     width: 100%;
+    margin-bottom: 0.5rem;
 
     @include media-min($mobile-bp) {
       flex: 0 1 49%;
@@ -37,14 +37,14 @@
     color: $gray-7;
     height: 2.5rem;
 
+    @include media-min($mobile-bp) {
+      flex: 0 1 49%;
+      padding: 0;
+    }
+
     @include media-min($tablet-bp) {
       justify-self: end;
       width: 7rem;
-    }
-
-    @include media-max($tablet-bp) {
-      flex: 0 1 49%;
-      padding: 0;
     }
   }
 }

@@ -112,15 +112,9 @@ class Participant extends Component {
     return (
       <tr className="participant">
         <td className={`participant__info ${!this.state.editMode ? '' : 'hidden'}`}>
-          <div className="participant__info-cel">
-            <p>{data.name}</p>
-          </div>
-          <div className="participant__info-cel">
-            <p>{data.email}</p>
-          </div>
-          <div className="participant__info-cel">
-            <p>{data.phone}</p>
-          </div>
+          <p className="participant__info-text">{data.name}</p>
+          <p className="participant__info-text">{data.email}</p>
+          <p className="participant__info-text">{data.phone}</p>
         </td>
         <td className={`participant__edit ${this.state.editMode ? '' : 'hidden'}`}>
           <form className="participant__edit-form">

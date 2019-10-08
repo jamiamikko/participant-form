@@ -12,6 +12,7 @@
   &__info {
     display: grid;
     justify-content: space-between;
+    align-items: center;
     grid-template-columns: 24% 42% 34%;
     grid-gap: 2%;
     width: 100%;
@@ -21,9 +22,10 @@
     line-height: 1.5rem;
     font-weight: 400;
 
-    &-cel {
-      display: flex;
-      align-items: center;
+    &-text {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
   }
 
