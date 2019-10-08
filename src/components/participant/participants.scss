@@ -1,0 +1,11 @@
+@import '../../scss/helpers/variables.scss';
+
+.participants {
+  max-width: 57rem;
+  margin: 0 auto 12rem auto;
+
+  &__heading {
+    margin: 0;
+    color: $gray-7;
+  }
+}
