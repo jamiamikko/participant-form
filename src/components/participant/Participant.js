@@ -150,20 +150,20 @@ class Participant extends Component {
             />
           </form>
         </td>
-        <td className="participant__actions-wrapper">
-          <div className={`participant__actions ${!this.state.editMode ? '' : 'hidden'}`}>
-            <button className="participant__icon-button">
+        <td className="participant__actions">
+          <div className={`participant__actions-default ${!this.state.editMode ? '' : 'hidden'}`}>
+            <button className="participant__actions-button">
               <EditIcon onClick={this.toggleEditMode} />
             </button>
             <button
-              className="participant__icon-button"
+              className="participant__actions-button"
               onClick={() => {
                 this.props.deleteParticipant(data.id);
               }}>
               <DeleteIcon />
             </button>
           </div>
-          <div className={`participant__actions--edit ${this.state.editMode ? '' : 'hidden'}`}>
+          <div className={`participant__actions-edit ${this.state.editMode ? '' : 'hidden'}`}>
             <button className="participant__edit-button" onClick={this.toggleEditMode}>
               Cancel
             </button>
