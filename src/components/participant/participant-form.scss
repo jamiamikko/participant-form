@@ -3,8 +3,11 @@
 @import '../../scss/helpers/placeholders.scss';
 
 .participant-form {
-  display: flex;
-  flex-flow: row wrap;
+  @include media-min($mobile-bp) {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+  }
 
   @include media-min($tablet-bp) {
     display: grid;
@@ -16,16 +19,21 @@
   &__input {
     @extend %input-base;
     height: 2.5rem;
+    margin-bottom: 0.5rem;
+    width: 100%;
 
-    @include media-max($tablet-bp) {
+    @include media-min($mobile-bp) {
       flex: 0 1 49%;
-      padding: 0;
+    }
+
+    @include media-min($tablet-bp) {
+      margin-bottom: 0;
     }
   }
 
   &__button {
     @extend %button-base;
-
+    width: 100%;
     color: $gray-7;
     height: 2.5rem;
 
