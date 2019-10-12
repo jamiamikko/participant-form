@@ -118,7 +118,7 @@ class Participant extends Component {
         </td>
         <td className={`participant__edit ${this.state.editMode ? '' : 'hidden'}`}>
           <form className="participant__edit-form">
-            <label for={`editParticipantName_${data.id}`} class="vishidden">
+            <label htmlFor={`editParticipantName_${data.id}`} className="vishidden">
               Full name
             </label>
             <input
@@ -127,12 +127,12 @@ class Participant extends Component {
                 this.state.valid.name
               )}`}
               type="text"
-              name={`editParticipantName_${data.id}`}
+              name="name"
               id={`editParticipantName_${data.id}`}
               onChange={this.handleChange}
               value={this.state.name}
             />
-            <label for={`editParticipantEmail_${data.id}`} class="vishidden">
+            <label htmlFor={`editParticipantEmail_${data.id}`} className="vishidden">
               E-mail address
             </label>
             <input
@@ -141,12 +141,12 @@ class Participant extends Component {
                 this.state.valid.email
               )}`}
               type="email"
-              name={`editParticipantEmail_${data.id}`}
+              name="email"
               id={`editParticipantEmail_${data.id}`}
               onChange={this.handleChange}
               value={this.state.email}
             />
-            <label for={`editParticipantPhone_${data.id}`} class="vishidden">
+            <label htmlFor={`editParticipantPhone_${data.id}`} className="vishidden">
               Phone number
             </label>
             <input
@@ -155,7 +155,7 @@ class Participant extends Component {
                 this.state.valid.phone
               )}`}
               type="tel"
-              name={`editParticipantPhone_${data.id}`}
+              name="phone"
               id={`editParticipantPhone_${data.id}`}
               onChange={this.handleChange}
               value={this.state.phone}
@@ -165,7 +165,7 @@ class Participant extends Component {
         <td className="participant__actions">
           <div
             className={`participant__actions-default ${!this.state.editMode ? '' : 'hidden'}`}
-            aria-hidden={`${!this.state.editMode ? 'false' : 'true'}`}>
+            aria-hidden={`${!this.state.editMode ? false : true}`}>
             <button className="participant__actions-button">
               <span className="vishidden">Edit participant</span>
               <EditIcon onClick={this.toggleEditMode} />
@@ -181,7 +181,7 @@ class Participant extends Component {
           </div>
           <div
             className={`participant__actions-edit ${this.state.editMode ? '' : 'hidden'}`}
-            aria-hidden={`${this.state.editMode ? 'false' : 'true'}`}>
+            aria-hidden={`${this.state.editMode ? false : true}`}>
             <button className="participant__edit-button" onClick={this.toggleEditMode}>
               Cancel
             </button>

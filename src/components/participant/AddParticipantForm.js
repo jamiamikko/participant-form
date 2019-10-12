@@ -97,12 +97,12 @@ class AddParticipantForm extends Component {
     return (
       <div className="add-participant">
         <form className="add-participant__form">
-          <label for="newParticipantName" class="vishidden">
+          <label htmlFor="newParticipantName" className="vishidden">
             Full name
           </label>
           <input
             type="text"
-            name="newParticipantName"
+            name="name"
             id="newParticipantName"
             placeholder="Full name"
             onChange={this.handleChange}
@@ -112,12 +112,12 @@ class AddParticipantForm extends Component {
               this.state.valid.name
             )}`}
           />
-          <label for="newParticipantEmail" class="vishidden">
+          <label htmlFor="newParticipantEmail" className="vishidden">
             E-mail address
           </label>
           <input
             type="email"
-            name="newParticipantEmail"
+            name="email"
             id="newParticipantEmail"
             placeholder="E-mail address"
             onChange={this.handleChange}
@@ -127,12 +127,12 @@ class AddParticipantForm extends Component {
               this.state.valid.email
             )}`}
           />
-          <label for="newParticipantPhone" class="vishidden">
+          <label htmlFor="newParticipantPhone" className="vishidden">
             Phone number
           </label>
           <input
             type="tel"
-            name="newParticipantPhone"
+            name="phone"
             id="newParticipantPhone"
             placeholder="Phone number"
             onChange={this.handleChange}
