@@ -6,7 +6,6 @@
   margin-top: 4.5rem;
   background-color: $white;
   padding: 1rem;
-  width: calc(100% - 2rem);
 
   &__form {
     display: flex;
@@ -22,14 +21,15 @@
     @extend %input-base;
     height: 2.5rem;
     width: 100%;
-    margin-bottom: 0.5rem;
 
     @include media-max($tablet-bp) {
       flex: 0 1 49%;
+      margin-bottom: 0.5rem;
     }
 
     @include media-max($mobile-bp) {
-      flex: 0 1 auto;
+      flex: unset;
+      margin-bottom: 0.5rem;
     }
 
     @include media-min($tablet-bp) {
@@ -61,14 +61,15 @@
     color: $gray-7;
     height: 2.5rem;
     width: 100%;
-    margin-bottom: 0.5rem;
 
     @include media-max($tablet-bp) {
       flex: 0 1 49%;
+      margin-bottom: 0.5rem;
     }
 
     @include media-max($mobile-bp) {
-      flex: 0 1 auto;
+      flex: unset;
+      margin-bottom: 0;
     }
 
     @include media-min($tablet-bp) {
