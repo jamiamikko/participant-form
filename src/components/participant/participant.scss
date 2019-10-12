@@ -1,31 +1,153 @@
 @import '../../scss/helpers/variables.scss';
+@import '../../scss/helpers/mixins.scss';
 @import '../../scss/helpers/placeholders.scss';
 
 .participant {
-  display: grid;
-  grid-template-columns: 74.25% auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
   background-color: $white;
-  padding: 0 1.5rem;
+  padding: 1rem 1.5rem;
   margin-bottom: 0.15rem;
-  height: 4.5rem;
+  min-height: 3.5rem;
+
+  @include media-min($tablet-bp) {
+    flex-direction: row;
+  }
 
   &__info {
-    display: grid;
-    justify-content: space-between;
+    display: flex;
     align-items: center;
-    grid-template-columns: 24% 42% 34%;
-    grid-gap: 2%;
+    flex-direction: column;
     width: 100%;
     height: 100%;
+    margin-bottom: 1rem;
+
     color: $gray-7;
     font-size: 1rem;
     line-height: 1.5rem;
     font-weight: 400;
 
+    @include media-max($tablet-bp) {
+      justify-content: space-between;
+    }
+
+    @include media-min($mobile-bp) {
+      flex-direction: row;
+    }
+
+    @include media-min($tablet-bp) {
+      max-width: 81%;
+      margin-bottom: 0;
+      margin-right: 0.5rem;
+    }
+
     &-text {
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
+      width: auto;
+
+      @include media-min($mobile-bp) {
+        margin-bottom: 0;
+        margin-right: 2%;
+
+        &:last-of-type {
+          margin-right: 0;
+        }
+      }
+
+      @include media-min($tablet-bp) {
+        width: auto;
+      }
+
+      &--name {
+        @include media-min($tablet-bp) {
+          min-width: 25%;
+        }
+      }
+
+      &--email {
+        @include media-min($tablet-bp) {
+          min-width: 33%;
+        }
+      }
+    }
+  }
+
+  &__edit {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    margin-bottom: 0.5rem;
+
+    @include media-min($tablet-bp) {
+      max-width: 75%;
+      margin-bottom: 0;
+      margin-right: 0.5rem;
+    }
+
+    &-form {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      width: 100%;
+
+      @include media-max($tablet-bp) {
+        justify-content: space-between;
+      }
+
+      @include media-min($mobile-bp) {
+        flex-direction: row;
+      }
+    }
+
+    &-input {
+      @extend %input-base;
+      height: 2.5rem;
+      width: 100%;
+      margin-right: 0;
+      margin-bottom: 0.5rem;
+
+      @include media-min($mobile-bp) {
+        width: 30%;
+        margin-bottom: 0;
+        margin-right: 2%;
+
+        &:last-of-type {
+          margin-right: 0;
+        }
+      }
+
+      @include media-min($tablet-bp) {
+        width: auto;
+      }
+
+      &--name {
+        @include media-min($tablet-bp) {
+          min-width: 25%;
+        }
+      }
+
+      &--email {
+        @include media-min($tablet-bp) {
+          min-width: 33%;
+        }
+      }
+    }
+
+    &-button {
+      @extend %button-base;
+      color: $blue;
+      font-weight: 500;
+
+      &--save {
+        color: $white;
+        background-color: $blue;
+        margin-left: 0.5rem;
+      }
     }
   }
 
@@ -33,6 +155,7 @@
     display: flex;
     justify-content: flex-end;
     height: 100%;
+    width: auto;
 
     &-default {
       display: flex;
@@ -53,36 +176,6 @@
       background: transparent;
       color: $gray-5;
       cursor: pointer;
-    }
-  }
-
-  &__edit {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-
-    &-form {
-      display: grid;
-      grid-template-columns: 27% 46.5% auto;
-      grid-gap: 2%;
-    }
-
-    &-input {
-      @extend %input-base;
-      height: 2.5rem;
-    }
-
-    &-button {
-      @extend %button-base;
-      color: $blue;
-      font-weight: 500;
-
-      &--save {
-        color: $white;
-        background-color: $blue;
-        margin-left: 0.5rem;
-      }
     }
   }
 }

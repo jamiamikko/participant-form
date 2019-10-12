@@ -112,14 +112,14 @@ class Participant extends Component {
     return (
       <tr className="participant">
         <td className={`participant__info ${!this.state.editMode ? '' : 'hidden'}`}>
-          <p className="participant__info-text">{data.name}</p>
-          <p className="participant__info-text">{data.email}</p>
-          <p className="participant__info-text">{data.phone}</p>
+          <p className="participant__info-text participant__info-text--name">{data.name}</p>
+          <p className="participant__info-text participant__info-text--email">{data.email}</p>
+          <p className="participant__info-text participant__info-text--phone">{data.phone}</p>
         </td>
         <td className={`participant__edit ${this.state.editMode ? '' : 'hidden'}`}>
           <form className="participant__edit-form">
             <input
-              className={`participant__edit-input ${this.errorClass(
+              className={`participant__edit-input participant__edit-input--name ${this.errorClass(
                 this.state.touched.name,
                 this.state.valid.name
               )}`}
@@ -129,7 +129,7 @@ class Participant extends Component {
               value={this.state.name}
             />
             <input
-              className={`participant__edit-input ${this.errorClass(
+              className={`participant__edit-input participant__edit-input--email ${this.errorClass(
                 this.state.touched.email,
                 this.state.valid.email
               )}`}
@@ -139,7 +139,7 @@ class Participant extends Component {
               value={this.state.email}
             />
             <input
-              className={`participant__edit-input ${this.errorClass(
+              className={`participant__edit-input participant__edit-input--phone ${this.errorClass(
                 this.state.touched.phone,
                 this.state.valid.phone
               )}`}
