@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import ParticipantList from './participant/ParticipantList';
+import Participants from './participant/Participants';
 import './content.scss';
 
 class Content extends Component {
   render() {
     return (
       <section className="content">
-        <ParticipantList />
+        <Participants />
       </section>
     );
   }

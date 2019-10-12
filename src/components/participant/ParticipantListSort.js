@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
-import './participant-list.scss';
 
-class ParticipantListFilter extends Component {
+class ParticipantListSort extends Component {
   constructor(props) {
     super(props);
 
@@ -37,41 +36,41 @@ class ParticipantListFilter extends Component {
 
   render() {
     return (
-      <thead className="participant-list__filter-wrapper">
-        <tr className="participant-list__filter-grid">
-          <th>
+      <thead className="participant-list__header">
+        <tr className="participant-list__header-row">
+          <th className="participant-list__sort-wrapper participant-list__sort-wrapper--name">
             <button
-              className={`participant-list__filter ${this.activeClass('name')}`}
+              className={`participant-list__sort-button ${this.activeClass('name')}`}
               onClick={() => {
                 this.sortBy('name');
               }}>
               Name
               <ArrowDownwardIcon
-                className={`participant-list__filter-icon ${this.activeClass('name')}`}
+                className={`participant-list__sort-icon ${this.activeClass('name')}`}
               />
             </button>
           </th>
-          <th>
+          <th className="participant-list__sort-wrapper participant-list__sort-wrapper--email">
             <button
-              className={`participant-list__filter ${this.activeClass('email')}`}
+              className={`participant-list__sort-button ${this.activeClass('email')}`}
               onClick={() => {
                 this.sortBy('email');
               }}>
               E-mail address
               <ArrowDownwardIcon
-                className={`participant-list__filter-icon ${this.activeClass('email')}`}
+                className={`participant-list__sort-icon ${this.activeClass('email')}`}
               />
             </button>
           </th>
-          <th>
+          <th className="participant-list__sort-wrapper participant-list__sort-wrapper--phone">
             <button
-              className={`participant-list__filter ${this.activeClass('phone')}`}
+              className={`participant-list__sort-button ${this.activeClass('phone')}`}
               onClick={() => {
                 this.sortBy('phone');
               }}>
               Phone number
               <ArrowDownwardIcon
-                className={`participant-list__filter-icon ${this.activeClass('phone')}`}
+                className={`participant-list__sort-icon ${this.activeClass('phone')}`}
               />
             </button>
           </th>
@@ -81,4 +80,4 @@ class ParticipantListFilter extends Component {
   }
 }
 
-export default ParticipantListFilter;
+export default ParticipantListSort;

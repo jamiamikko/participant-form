@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Random, uuid4 } from 'random-js';
-import './participant-list.scss';
+import './add-participant.scss';
 
-class ParticipantListForm extends Component {
+class AddParticipantForm extends Component {
   constructor(props) {
     super(props);
 
@@ -95,15 +95,15 @@ class ParticipantListForm extends Component {
 
   render() {
     return (
-      <div className="participant-list__header">
-        <form className="participant-form">
+      <div className="add-participant">
+        <form className="add-participant__form">
           <input
             type="text"
             name="name"
             placeholder="Full name"
             onChange={this.handleChange}
             value={this.state.name}
-            className={`participant-form__input ${this.errorClass(
+            className={`add-participant__input add-participant__input--name ${this.errorClass(
               this.state.touched.name,
               this.state.valid.name
             )}`}
@@ -114,7 +114,7 @@ class ParticipantListForm extends Component {
             placeholder="E-mail address"
             onChange={this.handleChange}
             value={this.state.email}
-            className={`participant-form__input ${this.errorClass(
+            className={`add-participant__input add-participant__input--email ${this.errorClass(
               this.state.touched.email,
               this.state.valid.email
             )}`}
@@ -125,12 +125,12 @@ class ParticipantListForm extends Component {
             placeholder="Phone number"
             onChange={this.handleChange}
             value={this.state.phone}
-            className={`participant-form__input ${this.errorClass(
+            className={`add-participant__input add-participant__input--phone ${this.errorClass(
               this.state.touched.phone,
               this.state.valid.phone
             )}`}
           />
-          <button className="participant-form__button" onClick={this.submitForm}>
+          <button className="add-participant__button" onClick={this.submitForm}>
             Add new
           </button>
         </form>
@@ -139,4 +139,4 @@ class ParticipantListForm extends Component {
   }
 }
 
-export default ParticipantListForm;
+export default AddParticipantForm;

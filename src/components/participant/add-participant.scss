@@ -1,0 +1,79 @@
+@import '../../scss/helpers/variables.scss';
+@import '../../scss/helpers/mixins.scss';
+@import '../../scss/helpers/placeholders.scss';
+
+.add-participant {
+  margin-top: 4.5rem;
+  background-color: $white;
+  padding: 1rem;
+
+  &__form {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include media-max($tablet-bp) {
+      flex-flow: row wrap;
+    }
+  }
+
+  &__input {
+    @extend %input-base;
+    height: 2.5rem;
+    width: 100%;
+
+    @include media-max($tablet-bp) {
+      flex: 0 1 49%;
+      margin-bottom: 0.5rem;
+    }
+
+    @include media-max($mobile-bp) {
+      flex: unset;
+      margin-bottom: 0.5rem;
+    }
+
+    @include media-min($tablet-bp) {
+      width: auto;
+      margin-right: 1rem;
+    }
+
+    &--name {
+      @include media-min($tablet-bp) {
+        min-width: 25%;
+      }
+    }
+
+    &--email {
+      @include media-min($tablet-bp) {
+        min-width: 33%;
+      }
+    }
+
+    &--phone {
+      @include media-min($tablet-bp) {
+        min-width: 25%;
+      }
+    }
+  }
+
+  &__button {
+    @extend %button-base;
+    color: $gray-7;
+    height: 2.5rem;
+    width: 100%;
+
+    @include media-max($tablet-bp) {
+      flex: 0 1 49%;
+      margin-bottom: 0.5rem;
+    }
+
+    @include media-max($mobile-bp) {
+      flex: unset;
+      margin-bottom: 0;
+    }
+
+    @include media-min($tablet-bp) {
+      width: 7rem;
+    }
+  }
+}

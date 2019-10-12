@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import EditIcon from '@material-ui/icons/Edit';
 import DeleteIcon from '@material-ui/icons/Delete';
-import './participant-list.scss';
+import './participant.scss';
 
 class Participant extends Component {
   constructor(props) {
@@ -112,20 +112,14 @@ class Participant extends Component {
     return (
       <tr className="participant">
         <td className={`participant__info ${!this.state.editMode ? '' : 'hidden'}`}>
-          <div className="participant__info-cel">
-            <p>{data.name}</p>
-          </div>
-          <div className="participant__info-cel">
-            <p>{data.email}</p>
-          </div>
-          <div className="participant__info-cel">
-            <p>{data.phone}</p>
-          </div>
+          <p className="participant__info-text participant__info-text--name">{data.name}</p>
+          <p className="participant__info-text participant__info-text--email">{data.email}</p>
+          <p className="participant__info-text participant__info-text--phone">{data.phone}</p>
         </td>
         <td className={`participant__edit ${this.state.editMode ? '' : 'hidden'}`}>
           <form className="participant__edit-form">
             <input
-              className={`participant__edit-input ${this.errorClass(
+              className={`participant__edit-input participant__edit-input--name ${this.errorClass(
                 this.state.touched.name,
                 this.state.valid.name
               )}`}
@@ -135,7 +129,7 @@ class Participant extends Component {
               value={this.state.name}
             />
             <input
-              className={`participant__edit-input ${this.errorClass(
+              className={`participant__edit-input participant__edit-input--email ${this.errorClass(
                 this.state.touched.email,
                 this.state.valid.email
               )}`}
@@ -145,7 +139,7 @@ class Participant extends Component {
               value={this.state.email}
             />
             <input
-              className={`participant__edit-input ${this.errorClass(
+              className={`participant__edit-input participant__edit-input--phone ${this.errorClass(
                 this.state.touched.phone,
                 this.state.valid.phone
               )}`}
@@ -156,20 +150,20 @@ class Participant extends Component {
             />
           </form>
         </td>
-        <td className="participant__actions-wrapper">
-          <div className={`participant__actions ${!this.state.editMode ? '' : 'hidden'}`}>
-            <button className="participant__icon-button">
+        <td className="participant__actions">
+          <div className={`participant__actions-default ${!this.state.editMode ? '' : 'hidden'}`}>
+            <button className="participant__actions-button">
               <EditIcon onClick={this.toggleEditMode} />
             </button>
             <button
-              className="participant__icon-button"
+              className="participant__actions-button"
               onClick={() => {
                 this.props.deleteParticipant(data.id);
               }}>
               <DeleteIcon />
             </button>
           </div>
-          <div className={`participant__actions--edit ${this.state.editMode ? '' : 'hidden'}`}>
+          <div className={`participant__actions-edit ${this.state.editMode ? '' : 'hidden'}`}>
             <button className="participant__edit-button" onClick={this.toggleEditMode}>
               Cancel
             </button>
