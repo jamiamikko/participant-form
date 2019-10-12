@@ -103,7 +103,7 @@ class AddParticipantForm extends Component {
             placeholder="Full name"
             onChange={this.handleChange}
             value={this.state.name}
-            className={`add-participant__input ${this.errorClass(
+            className={`add-participant__input add-participant__input--name ${this.errorClass(
               this.state.touched.name,
               this.state.valid.name
             )}`}
@@ -114,7 +114,7 @@ class AddParticipantForm extends Component {
             placeholder="E-mail address"
             onChange={this.handleChange}
             value={this.state.email}
-            className={`add-participant__input ${this.errorClass(
+            className={`add-participant__input add-participant__input--email ${this.errorClass(
               this.state.touched.email,
               this.state.valid.email
             )}`}
@@ -125,7 +125,7 @@ class AddParticipantForm extends Component {
             placeholder="Phone number"
             onChange={this.handleChange}
             value={this.state.phone}
-            className={`add-participant__input ${this.errorClass(
+            className={`add-participant__input add-participant__input--phone ${this.errorClass(
               this.state.touched.phone,
               this.state.valid.phone
             )}`}

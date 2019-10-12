@@ -9,17 +9,12 @@
   width: calc(100% - 2rem);
 
   &__form {
-    @include media-min($mobile-bp) {
-      display: flex;
-      flex-flow: row wrap;
-      justify-content: space-between;
-    }
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-    @include media-min($tablet-bp) {
-      display: grid;
-      grid-template-columns: 18% 30% 22% auto;
-      grid-gap: 2%;
-      align-items: center;
+    @include media-max($tablet-bp) {
+      flex-flow: row wrap;
     }
   }
 
@@ -29,28 +24,54 @@
     width: 100%;
     margin-bottom: 0.5rem;
 
-    @include media-min($mobile-bp) {
+    @include media-max($tablet-bp) {
       flex: 0 1 49%;
     }
 
+    @include media-max($mobile-bp) {
+      flex: 0 1 auto;
+    }
+
     @include media-min($tablet-bp) {
-      margin-bottom: 0;
+      width: auto;
+      margin-right: 1rem;
+    }
+
+    &--name {
+      @include media-min($tablet-bp) {
+        min-width: 25%;
+      }
+    }
+
+    &--email {
+      @include media-min($tablet-bp) {
+        min-width: 33%;
+      }
+    }
+
+    &--phone {
+      @include media-min($tablet-bp) {
+        min-width: 25%;
+      }
     }
   }
 
   &__button {
     @extend %button-base;
-    width: 100%;
     color: $gray-7;
     height: 2.5rem;
+    width: 100%;
+    margin-bottom: 0.5rem;
 
-    @include media-min($mobile-bp) {
+    @include media-max($tablet-bp) {
       flex: 0 1 49%;
-      padding: 0;
+    }
+
+    @include media-max($mobile-bp) {
+      flex: 0 1 auto;
     }
 
     @include media-min($tablet-bp) {
-      justify-self: end;
       width: 7rem;
     }
   }

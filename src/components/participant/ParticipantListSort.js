@@ -38,7 +38,7 @@ class ParticipantListSort extends Component {
     return (
       <thead className="participant-list__header">
         <tr className="participant-list__header-row">
-          <th class="participant-list__sort-wrapper participant-list__sort-wrapper--name">
+          <th className="participant-list__sort-wrapper participant-list__sort-wrapper--name">
             <button
               className={`participant-list__sort-button ${this.activeClass('name')}`}
               onClick={() => {
@@ -50,7 +50,7 @@ class ParticipantListSort extends Component {
               />
             </button>
           </th>
-          <th class="participant-list__sort-wrapper participant-list__sort-wrapper--email">
+          <th className="participant-list__sort-wrapper participant-list__sort-wrapper--email">
             <button
               className={`participant-list__sort-button ${this.activeClass('email')}`}
               onClick={() => {
@@ -62,7 +62,7 @@ class ParticipantListSort extends Component {
               />
             </button>
           </th>
-          <th class="participant-list__sort-wrapper participant-list__sort-wrapper--phone">
+          <th className="participant-list__sort-wrapper participant-list__sort-wrapper--phone">
             <button
               className={`participant-list__sort-button ${this.activeClass('phone')}`}
               onClick={() => {
