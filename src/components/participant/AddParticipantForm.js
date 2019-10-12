@@ -97,9 +97,13 @@ class AddParticipantForm extends Component {
     return (
       <div className="add-participant">
         <form className="add-participant__form">
+          <label for="newParticipantName" class="vishidden">
+            Full name
+          </label>
           <input
             type="text"
-            name="name"
+            name="newParticipantName"
+            id="newParticipantName"
             placeholder="Full name"
             onChange={this.handleChange}
             value={this.state.name}
@@ -108,9 +112,13 @@ class AddParticipantForm extends Component {
               this.state.valid.name
             )}`}
           />
+          <label for="newParticipantEmail" class="vishidden">
+            E-mail address
+          </label>
           <input
             type="email"
-            name="email"
+            name="newParticipantEmail"
+            id="newParticipantEmail"
             placeholder="E-mail address"
             onChange={this.handleChange}
             value={this.state.email}
@@ -119,9 +127,13 @@ class AddParticipantForm extends Component {
               this.state.valid.email
             )}`}
           />
+          <label for="newParticipantPhone" class="vishidden">
+            Phone number
+          </label>
           <input
             type="tel"
-            name="phone"
+            name="newParticipantPhone"
+            id="newParticipantPhone"
             placeholder="Phone number"
             onChange={this.handleChange}
             value={this.state.phone}
