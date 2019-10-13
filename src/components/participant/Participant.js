@@ -165,7 +165,7 @@ class Participant extends Component {
         <td className="participant__actions">
           <div
             className={`participant__actions-default ${!this.state.editMode ? '' : 'hidden'}`}
-            aria-hidden={`${!this.state.editMode ? false : true}`}>
+            aria-hidden={!this.state.editMode ? false : true}>
             <button className="participant__actions-button">
               <span className="vishidden">Edit participant</span>
               <EditIcon onClick={this.toggleEditMode} />
@@ -181,7 +181,7 @@ class Participant extends Component {
           </div>
           <div
             className={`participant__actions-edit ${this.state.editMode ? '' : 'hidden'}`}
-            aria-hidden={`${this.state.editMode ? false : true}`}>
+            aria-hidden={this.state.editMode ? false : true}>
             <button className="participant__edit-button" onClick={this.toggleEditMode}>
               Cancel
             </button>
