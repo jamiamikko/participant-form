@@ -21,3 +21,6 @@ yarn install
 `yarn deploy` - Deploy the application. [Firebase hosting](https://firebase.google.com/docs/hosting/quickstart) configuration required.
 
 `yarn test` - Launch the test runner in the interactive watch mode. See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+
+## Application URL
+[https://participant-form.firebaseapp.com/](https://participant-form.firebaseapp.com/)
