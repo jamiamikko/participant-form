@@ -64,13 +64,19 @@
 
       &--name {
         @include media-min($tablet-bp) {
-          min-width: 25%;
+          min-width: 27%;
         }
       }
 
       &--email {
         @include media-min($tablet-bp) {
-          min-width: 33%;
+          min-width: 37%;
+        }
+      }
+
+      &--phone {
+        @include media-min($tablet-bp) {
+          min-width: 36%;
         }
       }
     }
@@ -127,13 +133,13 @@
 
       &--name {
         @include media-min($tablet-bp) {
-          min-width: 25%;
+          width: 27%;
         }
       }
 
       &--email {
         @include media-min($tablet-bp) {
-          min-width: 33%;
+          width: 37%;
         }
       }
     }

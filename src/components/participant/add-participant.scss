@@ -10,10 +10,10 @@
   &__form {
     display: flex;
     align-items: center;
-    justify-content: space-between;
 
     @include media-max($tablet-bp) {
       flex-flow: row wrap;
+      justify-content: space-between;
     }
   }
 
@@ -39,19 +39,19 @@
 
     &--name {
       @include media-min($tablet-bp) {
-        min-width: 25%;
+        width: 20%;
       }
     }
 
     &--email {
       @include media-min($tablet-bp) {
-        min-width: 33%;
+        width: 28%;
       }
     }
 
     &--phone {
       @include media-min($tablet-bp) {
-        min-width: 25%;
+        width: 20%;
       }
     }
   }
@@ -74,6 +74,7 @@
 
     @include media-min($tablet-bp) {
       width: 7rem;
+      margin-left: auto;
     }
   }
 }
