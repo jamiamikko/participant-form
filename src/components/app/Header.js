@@ -7,7 +7,7 @@ class Header extends Component {
       <header className="header">
         <div className="header__wrapper">
           <img alt="" className="header__logo" />
-          <h1 className="header__heading">Hello, React!</h1>
+          <h1 className="header__heading">Participant form</h1>
         </div>
       </header>
     );

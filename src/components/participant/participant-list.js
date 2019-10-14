@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import ParticipantListSort from './ParticipantListSort';
-import Participant from './Participant';
+import ParticipantListSort from './participant-list-sort';
+import Participant from './participant';
 
 import './participant-list.scss';
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import AddParticipantForm from './AddParticipantForm';
-import ParticipantList from './ParticipantList';
+import AddParticipantForm from './add-participant-form';
+import ParticipantList from './participant-list';
 import './participants.scss';
 import mockData from '../../data/participants.json';
 

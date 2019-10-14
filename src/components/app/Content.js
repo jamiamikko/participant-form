@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Participants from '../participant/Participants';
+import Participants from '../participant/participants';
 import './content.scss';
 
 class Content extends Component {
